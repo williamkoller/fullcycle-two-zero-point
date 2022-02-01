@@ -31,3 +31,9 @@ docker-compose up -d --build
 ```
 http://localhost
 ```
+
+6 - adicionar o servername na pasta /etc/hosts
+
+```
+127.0.0.1 nodeserver
+```
