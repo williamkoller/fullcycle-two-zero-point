@@ -6,7 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile.node
     container_name: nodeserver
-    # entrypoint: dockerize -wait tcp://db:3306 -timeout 30s docker-entrypoint.sh
+    entrypoint: dockerize -wait tcp://db:3306 -timeout 30s docker-entrypoint.sh
+    command: node server.js
     ports:
       - "3001:3001"
     networks:
@@ -24,7 +25,7 @@ services:
       context: .
       dockerfile: Dockerfile.nginx
     ports:
-      - "80:80"
+      - "8080:80"
     networks:
       - nodeserver_network
 
